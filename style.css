@@ -1,0 +1,760 @@
+/* =====================================================
+   PORTFÓLIO · Vanessa Sousa
+   Um único arquivo de estilos para todas as páginas.
+   ===================================================== */
+
+/* ---------- VARIÁVEIS: design system ---------- */
+:root {
+  /* Fontes */
+  --fonte-titulo: "Bricolage Grotesque", system-ui, sans-serif;
+  --fonte-texto: "DM Sans", system-ui, sans-serif;
+
+  /* Cores */
+  --cor-fundo: #f0f1f3;
+  --cor-fundo-imagem: #e2e3e6;
+  --cor-texto: #1e1e1e;
+  --cor-descricao: #5b5b5b;
+  --cor-menu: #525252;
+  --cor-botao: #353738;
+  --cor-botao-texto: #ffffff;
+  --cor-divisoria: #d0d2d6;
+
+  /* Títulos */
+  --tam-titulo-principal: 88px;
+  --peso-titulo-principal: 700;
+  --tam-nome-case: 40px;
+  --peso-nome-case: 500;
+  --tam-email: 40px;
+  --peso-email: 500;
+
+  /* Textos */
+  --tam-apresentacao: 24px;
+  --peso-apresentacao: 300;
+  --tam-descricao: 20px;
+  --peso-descricao: 300;
+  --tam-menu: 18px;
+  --peso-menu: 400;
+
+  /* Espaçamentos */
+  --largura-max: 1028px;
+  --espaco-cards: 48px;
+  --margem-lateral: 24px;
+}
+
+/* ---------- BASE ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: var(--fonte-texto);
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Foco visível em todos os links (acessibilidade) */
+a:focus-visible {
+  outline: 3px solid var(--cor-texto);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* ---------- CONTAINER: mesma largura e margem em todas as páginas ---------- */
+.container {
+  width: min(var(--largura-max), 100% - (var(--margem-lateral) * 2));
+  margin-inline: auto;
+}
+
+/* ---------- TOPO: logo e menu ---------- */
+.topo {
+  padding: 32px 0;
+}
+
+.topo .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo {
+  font-family: var(--fonte-titulo);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+/* ---------- MENU (topo e rodapé) ---------- */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu a {
+  color: var(--cor-menu);
+  font-size: var(--tam-menu);
+  font-weight: var(--peso-menu);
+  transition: color 0.2s ease;
+}
+
+.menu a:hover,
+.menu a[aria-current="page"] {
+  color: var(--cor-texto);
+}
+
+/* ---------- APRESENTAÇÃO ---------- */
+.apresentacao {
+  padding: 72px 0 80px;
+}
+
+.apresentacao h1 {
+  margin: 0 0 32px;
+  font-family: var(--fonte-titulo);
+  font-size: var(--tam-titulo-principal);
+  font-weight: var(--peso-titulo-principal);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.apresentacao p {
+  max-width: 900px;
+  margin: 0;
+  color: var(--cor-descricao);
+  font-size: var(--tam-apresentacao);
+  font-weight: var(--peso-apresentacao);
+  line-height: 1.4;
+}
+
+.apresentacao strong {
+  color: var(--cor-texto);
+  font-weight: 700;
+}
+
+/* ---------- IMAGEM: espaço cinza com proporção fixa ---------- */
+.imagem {
+  aspect-ratio: 1 / 1;          /* quadrada nos cards */
+  overflow: hidden;
+  background: var(--cor-fundo-imagem);
+}
+
+.imagem img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Se a foto ainda não existir, esconde o texto alternativo e deixa só o bloco cinza */
+  color: transparent;
+  font-size: 0;
+  transition: transform 0.5s ease;
+}
+
+/* ---------- CASES: grade de 2 colunas ---------- */
+.cases {
+  padding-bottom: 120px;
+}
+
+.cases-grade {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--espaco-cards);
+}
+
+/* ---------- CARD: link que envolve imagem, nome e descrição ---------- */
+.card {
+  display: block;
+}
+
+.card h2 {
+  margin: 28px 0 16px;
+  font-family: var(--fonte-titulo);
+  font-size: var(--tam-nome-case);
+  font-weight: var(--peso-nome-case);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+/* Sublinhado que cresce da esquerda para a direita */
+.card h2 span {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 2px;
+  padding-bottom: 2px;
+  transition: background-size 0.35s ease;
+}
+
+.card p {
+  margin: 0;
+  color: var(--cor-descricao);
+  font-size: var(--tam-descricao);
+  font-weight: var(--peso-descricao);
+  line-height: 1.65;
+}
+
+/* Hover e foco no card: zoom leve na imagem e sublinhado no nome */
+.card:hover .imagem img,
+.card:focus-visible .imagem img {
+  transform: scale(1.04);
+}
+
+.card:hover h2 span,
+.card:focus-visible h2 span {
+  background-size: 100% 2px;
+}
+
+/* ---------- RODAPÉ ---------- */
+.rodape {
+  padding: 0 0 64px;
+}
+
+.contato-chamada {
+  margin: 0 0 24px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.contato-email {
+  display: inline-block;
+  margin-bottom: 32px;
+  font-family: var(--fonte-titulo);
+  font-size: var(--tam-email);
+  font-weight: var(--peso-email);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
+}
+
+.contato-email:hover {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/* ---------- BOTÃO em pílula ---------- */
+.botao {
+  display: table;                /* fica abaixo do e-mail, com largura do texto */
+  padding: 14px 28px;
+  background: var(--cor-botao);
+  color: var(--cor-botao-texto);
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.botao:hover {
+  background: var(--cor-texto);
+  transform: translateY(-2px);
+}
+
+/* ---------- DIVISÓRIA ---------- */
+.divisoria {
+  height: 1px;
+  margin: 64px 0 32px;
+  border: 0;
+  background: var(--cor-divisoria);
+}
+
+/* ---------- ANIMAÇÃO leve na abertura da página (só CSS) ---------- */
+@keyframes entrada {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.apresentacao .container,
+.cases .container {
+  animation: entrada 0.7s ease both;
+}
+
+.cases .container {
+  animation-delay: 0.15s;
+}
+
+/* Respeita quem prefere menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------- CELULAR: tudo em uma coluna e título menor ---------- */
+@media (max-width: 720px) {
+  :root {
+    --tam-titulo-principal: 48px;
+    --tam-nome-case: 30px;
+    --tam-email: 26px;
+    --tam-apresentacao: 20px;
+    --tam-descricao: 18px;
+    --espaco-cards: 40px;
+  }
+
+  .topo {
+    padding: 24px 0;
+  }
+
+  .menu {
+    gap: 8px 20px;
+  }
+
+  .menu a {
+    font-size: 16px;
+  }
+
+  .apresentacao {
+    padding: 40px 0 48px;
+  }
+
+  .cases {
+    padding-bottom: 80px;
+  }
+
+  .cases-grade {
+    grid-template-columns: 1fr;
+  }
+
+  .divisoria {
+    margin: 48px 0 24px;
+  }
+}
+
+/* Telas bem pequenas: o menu do topo desce para baixo do logo */
+@media (max-width: 480px) {
+  .topo .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+/* =====================================================
+   PÁGINA SOBRE
+   Classes novas desta página: sobre, sobre-foto, secao, item
+   ===================================================== */
+
+/* ---------- Variáveis novas da página Sobre ---------- */
+:root {
+  --tam-titulo-sobre: 64px;
+  --peso-titulo-sobre: 500;
+  --tam-texto-sobre: 20px;
+  --peso-texto-sobre: 300;
+  --tam-titulo-secao: 40px;
+  --peso-titulo-secao: 500;
+  --tam-nome-item: 28px;
+  --peso-nome-item: 500;
+  --largura-texto-sobre: 480px;
+  --largura-foto: 390px;
+  --largura-secao: 650px;
+}
+
+/* ---------- SOBRE: texto à esquerda e foto quadrada à direita ---------- */
+.sobre {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--largura-foto);
+  gap: 48px;
+  align-items: start;
+  padding: 24px 0 96px;
+  animation: entrada 0.7s ease both;
+}
+
+/* Coluna do texto: estreita, mas sempre alinhada à esquerda */
+.sobre > div:first-child {
+  max-width: var(--largura-texto-sobre);
+}
+
+.sobre h1 {
+  margin: 0 0 32px;
+  font-family: var(--fonte-titulo);
+  font-size: var(--tam-titulo-sobre);
+  font-weight: var(--peso-titulo-sobre);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.sobre p {
+  margin: 0 0 20px;
+  color: var(--cor-descricao);
+  font-size: var(--tam-texto-sobre);
+  font-weight: var(--peso-texto-sobre);
+  line-height: 1.6;
+}
+
+.sobre strong {
+  color: var(--cor-texto);
+  font-weight: 500;
+}
+
+/* Foto: usa o espaço .imagem (quadrado e cinza), levemente abaixo do título */
+.sobre-foto {
+  max-width: var(--largura-foto);
+  margin-top: 72px;
+}
+
+/* ---------- SEÇÃO: Formação, Experiência e Habilidades ---------- */
+.secao {
+  max-width: var(--largura-secao);
+  margin-bottom: 72px;
+  animation: entrada 0.7s ease both;
+  animation-delay: 0.15s;
+}
+
+/* Última seção (botão Currículo): dá espaço antes do rodapé */
+.container > .secao:last-child {
+  margin-bottom: 120px;
+}
+
+.secao h2 {
+  margin: 0 0 32px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--cor-texto);
+  font-family: var(--fonte-titulo);
+  font-size: var(--tam-titulo-secao);
+  font-weight: var(--peso-titulo-secao);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+/* ---------- ITEM: nome em destaque e detalhe abaixo ---------- */
+.item {
+  margin-bottom: 40px;
+}
+
+.item:last-child {
+  margin-bottom: 0;
+}
+
+.item h3 {
+  margin: 0 0 12px;
+  font-family: var(--fonte-titulo);
+  font-size: var(--tam-nome-item);
+  font-weight: var(--peso-nome-item);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.item ul {
+  margin: 0;
+  padding-left: 24px;
+  color: var(--cor-descricao);
+  font-size: var(--tam-descricao);
+  font-weight: var(--peso-descricao);
+  line-height: 1.6;
+}
+
+.item li::marker {
+  color: var(--cor-texto);
+}
+
+/* ---------- SOBRE no celular: foto vai para baixo do texto ---------- */
+@media (max-width: 720px) {
+  :root {
+    --tam-titulo-sobre: 44px;
+    --tam-texto-sobre: 18px;
+    --tam-titulo-secao: 32px;
+    --tam-nome-item: 24px;
+  }
+
+  .sobre {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-bottom: 64px;
+  }
+
+  .sobre-foto {
+    margin-top: 0;
+  }
+
+  .secao {
+    margin-bottom: 56px;
+  }
+
+  .container > .secao:last-child {
+    margin-bottom: 80px;
+  }
+}
+
+/* =====================================================
+   PÁGINA DE CASE
+   Classes novas desta página: case-topo, case-info, bloco,
+   legenda, resultados (card, cases, imagem etc. já existem)
+   ===================================================== */
+
+/* ---------- Variáveis novas da página de case ---------- */
+:root {
+  --tam-titulo-case: 64px;
+  --peso-titulo-case: 500;
+  --tam-subtitulo-case: 20px;
+  --tam-rotulo-info: 14px;
+  --tam-valor-info: 20px;
+  --tam-titulo-bloco: 32px;
+  --peso-titulo-bloco: 500;
+  --tam-texto-bloco: 20px;
+  --largura-texto-bloco: 700px;
+  --tam-legenda: 16px;
+  --tam-resultado: 72px;
+  --peso-resultado: 700;
+  --tam-titulo-outros: 32px;
+  --tam-nome-card-outros: 28px;
+}
+
+/* ---------- CASE-TOPO: nome à esquerda, imagem horizontal à direita ---------- */
+.case-topo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+  gap: 48px;
+  align-items: center;
+  padding: 24px 0 72px;
+  animation: entrada 0.7s ease both;
+}
+
+.case-topo h1 {
+  margin: 0 0 16px;
+  font-family: var(--fonte-titulo);
+  font-size: var(--tam-titulo-case);
+  font-weight: var(--peso-titulo-case);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.case-topo p {
+  margin: 0;
+  font-size: var(--tam-subtitulo-case);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* A imagem do topo é horizontal (a .imagem padrão é quadrada) */
+.case-topo .imagem {
+  aspect-ratio: 3 / 2;
+}
+
+/* ---------- CASE-INFO: Papel, Equipe e Tempo lado a lado ---------- */
+.case-info {
+  margin-bottom: 80px;
+  padding: 32px 0;
+  border-top: 1px solid var(--cor-divisoria);
+  border-bottom: 1px solid var(--cor-divisoria);
+  animation: entrada 0.7s ease both;
+  animation-delay: 0.1s;
+}
+
+.case-info dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  margin: 0;
+}
+
+.case-info dt {
+  margin-bottom: 8px;
+  color: var(--cor-descricao);
+  font-size: var(--tam-rotulo-info);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.case-info dd {
+  margin: 0;
+  font-size: var(--tam-valor-info);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* ---------- BLOCO: título, texto e imagem horizontal ---------- */
+.bloco {
+  margin-bottom: 96px;
+}
+
+.bloco h2 {
+  margin: 0 0 24px;
+  font-family: var(--fonte-titulo);
+  font-size: var(--tam-titulo-bloco);
+  font-weight: var(--peso-titulo-bloco);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+/* Texto mais estreito, sempre alinhado à esquerda */
+.bloco p {
+  max-width: var(--largura-texto-bloco);
+  margin: 0;
+  color: var(--cor-descricao);
+  font-size: var(--tam-texto-bloco);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* Imagem: ocupa toda a largura do container, em formato horizontal */
+.bloco figure {
+  margin: 40px 0 0;
+}
+
+.bloco .imagem {
+  aspect-ratio: 16 / 9;
+}
+
+/* Bloco com duas imagens: 2 colunas lado a lado */
+.bloco .container > div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--espaco-cards);
+  margin-top: 40px;
+}
+
+.bloco .container > div figure {
+  margin: 0;
+}
+
+/* ---------- LEGENDA: itálico e centralizada ---------- */
+.legenda {
+  display: block;
+  margin-top: 12px;
+  color: var(--cor-descricao);
+  font-size: var(--tam-legenda);
+  font-style: italic;
+  font-weight: 400;
+  text-align: center;
+}
+
+/* ---------- RESULTADOS: números lado a lado ---------- */
+.resultados {
+  margin-bottom: 96px;
+}
+
+.resultados h2 {
+  margin: 0 0 40px;
+  font-family: var(--fonte-titulo);
+  font-size: var(--tam-titulo-bloco);
+  font-weight: var(--peso-titulo-bloco);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.resultados ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 40px 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.resultados strong {
+  display: block;
+  margin-bottom: 8px;
+  font-family: var(--fonte-titulo);
+  font-size: var(--tam-resultado);
+  font-weight: var(--peso-resultado);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.resultados span {
+  display: block;
+  color: var(--cor-descricao);
+  font-size: var(--tam-descricao);
+  font-weight: var(--peso-descricao);
+  line-height: 1.5;
+}
+
+/* ---------- VEJA OUTROS CASES: cards da página inicial em 3 colunas ---------- */
+aside.cases > .container > h2 {
+  margin: 0 0 40px;
+  font-family: var(--fonte-titulo);
+  font-size: var(--tam-titulo-outros);
+  font-weight: var(--peso-titulo-bloco);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+aside.cases .cases-grade {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* Nome do card menor, para caber em 3 colunas */
+aside.cases .card h2 {
+  margin: 20px 0 0;
+  font-size: var(--tam-nome-card-outros);
+}
+
+/* ---------- CASE no celular ---------- */
+@media (max-width: 720px) {
+  :root {
+    --tam-titulo-case: 44px;
+    --tam-titulo-bloco: 26px;
+    --tam-texto-bloco: 18px;
+    --tam-resultado: 48px;
+    --tam-titulo-outros: 26px;
+  }
+
+  /* Imagem do topo vai para baixo do texto */
+  .case-topo {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-bottom: 48px;
+  }
+
+  /* Informações uma embaixo da outra */
+  .case-info {
+    margin-bottom: 56px;
+  }
+
+  .case-info dl {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .bloco {
+    margin-bottom: 64px;
+  }
+
+  /* Duas imagens do bloco ficam em 1 coluna */
+  .bloco .container > div {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  /* Resultados: 2 por linha */
+  .resultados {
+    margin-bottom: 64px;
+  }
+
+  .resultados ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 24px;
+  }
+
+  /* Outros cases: 1 coluna */
+  aside.cases .cases-grade {
+    grid-template-columns: 1fr;
+  }
+}

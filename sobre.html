@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sobre mim | Vanessa Sousa</title>
+  <meta name="description" content="Conheça Vanessa Sousa, UX/UI Designer: formação, experiência e habilidades.">
+
+  <!-- Fontes do Google Fonts: Bricolage Grotesque (títulos) e DM Sans (textos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Único arquivo de estilos do site -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ TOPO: logo à esquerda e menu à direita ============ -->
+  <header class="topo">
+    <div class="container">
+      <a class="logo" href="index.html" aria-label="Vanessa Sousa, ir para o início">V.</a>
+
+      <nav aria-label="Menu principal">
+        <ul class="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html" aria-current="page">Sobre</a></li>
+          <!-- Currículo e LinkedIn abrem em nova aba -->
+          <li><a href="https://drive.google.com/file/d/1ZlrDvLPm80cVtcwgMt0J6DiRXyho8xFZ/view?usp=sharing" target="_blank" rel="noopener noreferrer">Currículo</a></li>
+          <li><a href="https://www.linkedin.com/in/vanne-dsg/?locale=en" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Todo o conteúdo fica no mesmo container da página inicial -->
+    <div class="container">
+
+      <!-- ============ APRESENTAÇÃO: texto à esquerda, foto quadrada à direita ============ -->
+      <section class="sobre">
+        <div>
+          <h1>Sobre mim</h1>
+          <p><strong>UX/UI Designer</strong></p>
+          <p>Procuradoria Geral • Voluntária na UXFor</p>
+          <p>Desenho produtos desde 2022. Acredito em design centrado no usuário e meu objetivo é projetar telas que os usuários gostem de usar. Amo ensinar (palestras, workshops, aulas...) sobre os assuntos que estudo, principalmente sobre design systems e IA no contexto de interfaces e experiência do usuário.</p>
+        </div>
+
+        <div class="sobre-foto">
+          <!-- IMAGEM: troque o arquivo img/perfil.jpg -->
+          <div class="imagem">
+            <img src="img/perfil.jpg" alt="Foto de perfil de Vanessa Sousa">
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ FORMAÇÃO ============ -->
+      <section class="secao">
+        <h2>Formação</h2>
+
+        <!-- FORMAÇÃO 1: copie daqui até FIM DA FORMAÇÃO 1 para adicionar outra -->
+        <div class="item">
+          <h3>UNIFOR</h3>
+          <ul>
+            <li>Análise e Desenvolvimento de Sistemas • 2025 – 2029</li>
+          </ul>
+        </div>
+        <!-- FIM DA FORMAÇÃO 1 -->
+
+      </section>
+
+      <!-- ============ EXPERIÊNCIA ============ -->
+      <section class="secao">
+        <h2>Experiência</h2>
+
+        <!-- EXPERIÊNCIA 1: copie daqui até FIM DA EXPERIÊNCIA 1 para adicionar outra -->
+        <div class="item">
+          <h3>Nome da empresa</h3>
+          <ul>
+            <li>Cargo • mês/ano – atual</li>
+          </ul>
+        </div>
+        <!-- FIM DA EXPERIÊNCIA 1 -->
+
+        <!-- EXPERIÊNCIA 2: copie daqui até FIM DA EXPERIÊNCIA 2 para adicionar outra -->
+        <div class="item">
+          <h3>Nome da empresa</h3>
+          <ul>
+            <li>Cargo • mês/ano – mês/ano</li>
+          </ul>
+        </div>
+        <!-- FIM DA EXPERIÊNCIA 2 -->
+
+      </section>
+
+      <!-- ============ HABILIDADES ============ -->
+      <section class="secao">
+        <h2>Habilidades</h2>
+
+        <!-- HABILIDADE 1: copie daqui até FIM DA HABILIDADE 1 para adicionar outra -->
+        <div class="item">
+          <h3>Skills</h3>
+          <ul>
+            <li>UX Research • UI Design • IA</li>
+          </ul>
+        </div>
+        <!-- FIM DA HABILIDADE 1 -->
+
+        <!-- HABILIDADE 2: copie daqui até FIM DA HABILIDADE 2 para adicionar outra -->
+        <div class="item">
+          <h3>Ferramentas</h3>
+          <ul>
+            <li>Figma • Claude</li>
+          </ul>
+        </div>
+        <!-- FIM DA HABILIDADE 2 -->
+
+        <!-- HABILIDADE 3: copie daqui até FIM DA HABILIDADE 3 para adicionar outra -->
+        <div class="item">
+          <h3>Outros</h3>
+          <ul>
+            <li>HTML • CSS • Javascript</li>
+          </ul>
+        </div>
+        <!-- FIM DA HABILIDADE 3 -->
+
+      </section>
+
+      <!-- ============ BOTÃO: abre o currículo em nova aba ============ -->
+      <div class="secao">
+        <a class="botao" href="https://drive.google.com/file/d/1ZlrDvLPm80cVtcwgMt0J6DiRXyho8xFZ/view?usp=sharing" target="_blank" rel="noopener noreferrer">Currículo</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ============ RODAPÉ: contato, botão, divisória e menu (igual à página inicial) ============ -->
+  <footer class="rodape">
+    <div class="container">
+
+      <div class="contato">
+        <p class="contato-chamada">👋 Fale comigo em</p>
+        <a class="contato-email" href="mailto:vanne.dsgn@gmail.com">vanne.dsgn@gmail.com</a>
+        <!-- Botão em pílula que abre o LinkedIn em nova aba -->
+        <a class="botao" href="https://www.linkedin.com/in/vanne-dsg/?locale=en" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+
+      <!-- Linha divisória -->
+      <hr class="divisoria">
+
+      <!-- Menu repetido, só com Início, Sobre e Currículo -->
+      <nav aria-label="Menu do rodapé">
+        <ul class="menu menu-rodape">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html" aria-current="page">Sobre</a></li>
+          <li><a href="https://drive.google.com/file/d/1ZlrDvLPm80cVtcwgMt0J6DiRXyho8xFZ/view?usp=sharing" target="_blank" rel="noopener noreferrer">Currículo</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </footer>
+
+</body>
+</html>
