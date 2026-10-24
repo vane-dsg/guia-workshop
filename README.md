@@ -10,19 +10,33 @@ trocar um valor ou um texto e salvar.
 
 ## Sumário
 
-0. [Antes de tudo: os arquivos e como editar no GitHub](#0-antes-de-tudo)
-1. [Mudar os estilos: cores, fontes, botões e cards](#1-mudar-os-estilos)
-2. [Trocar as imagens](#2-trocar-as-imagens)
-3. [Mudar os textos e os links](#3-mudar-os-textos-e-os-links)
-4. [Adicionar um case](#4-adicionar-um-case)
-5. [Adicionar experiência, formação e habilidades](#5-adicionar-experiência-formação-e-habilidades)
-6. [Outros ajustes úteis](#6-outros-ajustes-úteis)
-7. [Checklist: deixe com a sua cara](#7-checklist-deixe-com-a-sua-cara)
+0. [Checklist: deixe com a sua cara](#7-checklist-deixe-com-a-sua-cara)
+1. [Antes de tudo: os arquivos e como editar no GitHub](#0-antes-de-tudo)
+2. [Mudar os estilos: cores, fontes, botões e cards](#1-mudar-os-estilos)
+3. [Trocar as imagens](#2-trocar-as-imagens)
+4. [Mudar os textos e os links](#3-mudar-os-textos-e-os-links)
+5. [Adicionar um case](#4-adicionar-um-case)
+6. [Adicionar experiência, formação e habilidades](#5-adicionar-experiência-formação-e-habilidades)
+7. [Outros ajustes úteis](#6-outros-ajustes-úteis)
 8. [Se algo der errado](#8-se-algo-der-errado)
 
 ---
 
-## 0. Antes de tudo
+## 0. Checklist: deixe com a sua cara
+
+- [ ] Troque as iniciais do logo e o `<title>` de todas as páginas
+- [ ] Escolha suas cores e confira o contraste
+- [ ] Escolha suas fontes (nos HTML e no `style.css`)
+- [ ] Escreva sua apresentação
+- [ ] Coloque sua foto e as capas dos seus cases
+- [ ] Altere o conteúdo dos cases
+- [ ] Troque o e-mail, LinkedIn e currículo em todas as páginas
+- [ ] O currículo no Drive está como "Qualquer pessoa com o link"
+- [ ] Teste no celular (abri o link no celular ou diminuí a janela)
+
+---
+
+## 1. Antes de tudo
 
 ### Os arquivos
 
@@ -63,7 +77,7 @@ te guiar, por exemplo:
 
 ---
 
-## 1. Mudar os estilos
+## 2. Mudar os estilos
 
 Quase todo o visual está concentrado em **variáveis**, no começo do
 `style.css`, dentro do bloco `:root`. Uma variável é um valor com nome:
@@ -77,7 +91,7 @@ você muda o valor uma vez e ele muda em todos os lugares onde é usado.
 }
 ```
 
-### 1.1 Cores
+### 2.1 Cores
 
 No `style.css`, procure por `/* Cores */` e troque os códigos que
 começam com `#`:
@@ -106,7 +120,7 @@ Exemplo, para um fundo creme e botão verde-escuro:
 > no [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/).
 > O resultado precisa passar em **WCAG AA**.
 
-### 1.2 Fontes
+### 2.2 Fontes
 
 As fontes vêm do [Google Fonts](https://fonts.google.com) e mudam em
 **dois lugares**:
@@ -134,7 +148,7 @@ exatamente como aparece no Google Fonts:
 --fonte-texto: "Inter", system-ui, sans-serif;
 ```
 
-### 1.3 Tamanhos de texto
+### 2.3 Tamanhos de texto
 
 Ainda no `:root`, as variáveis que começam com `--tam-` são tamanhos, e
 as que começam com `--peso-` são a grossura da letra (300 é fina, 700 é
@@ -160,7 +174,7 @@ As páginas Sobre e Case têm variáveis próprias, mais embaixo no
 arquivo. Procure por `/* ---------- Variáveis novas da página Sobre` e
 `/* ---------- Variáveis novas da página de case`.
 
-### 1.4 Formato dos botões
+### 2.4 Formato dos botões
 
 No `style.css`, procure por `.botao {`:
 
@@ -248,7 +262,7 @@ Proporções comuns: `1 / 1` (quadrada), `4 / 3`, `3 / 2` e `16 / 9`
 
 ---
 
-## 2. Trocar as imagens
+## 3. Trocar as imagens
 
 Todas as imagens ficam na pasta `img`, e cada uma tem um nome fixo.
 Enquanto o arquivo não existir, aparece um **bloco cinza** no lugar.
@@ -302,7 +316,7 @@ comentário `<!-- IMAGEM:` acima de cada imagem.
 
 ---
 
-## 3. Mudar os textos e os links
+## 4. Mudar os textos e os links
 
 ### A regra de ouro
 
@@ -366,7 +380,7 @@ O link do e-mail precisa manter o `mailto:` na frente:
 
 ---
 
-## 4. Adicionar um case
+## 5. Adicionar um case
 
 Um case novo envolve três coisas: a **página** do case, o **card** na
 página inicial e as **imagens**. O exemplo abaixo cria o case 3; troque
@@ -428,7 +442,7 @@ embaixo e troque o link, a imagem e o nome.
 
 ---
 
-## 5. Adicionar experiência, formação e habilidades
+## 6. Adicionar experiência, formação e habilidades
 
 Tudo fica no `sobre.html` e segue o mesmo modelo.
 
@@ -477,7 +491,7 @@ copie até o comentário de fim, cole embaixo e troque os textos.
 
 ---
 
-## 6. Outros ajustes úteis
+## 7. Outros ajustes úteis
 
 ### Tags dos cases (pílulas)
 
@@ -543,22 +557,6 @@ Para trocar e-mail, LinkedIn ou currículo em todas as páginas juntas:
 4. No ícone de ramificação da barra lateral (**Source Control**),
    escreva uma mensagem e clique em **Commit & Push**.
 
----
-
-## 7. Checklist: deixe com a sua cara
-
-- [ ] Troquei as iniciais do logo e o `<title>` de todas as páginas
-- [ ] Escolhi minhas cores e conferi o contraste
-- [ ] Escolhi minhas fontes (nos HTML e no `style.css`)
-- [ ] Escrevi uma apresentação com a minha voz
-- [ ] Coloquei minha foto e as capas dos meus cases
-- [ ] Os cases são meus, com o meu papel e as minhas decisões
-- [ ] Troquei e-mail, LinkedIn e currículo em todas as páginas
-- [ ] O currículo no Drive está como "Qualquer pessoa com o link"
-- [ ] Testei no celular (abri o link no celular ou diminuí a janela)
-- [ ] Todos os links do menu e dos cards abrem a página certa
-
----
 
 ## 8. Se algo der errado
 
