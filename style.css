@@ -18,6 +18,9 @@
   --cor-botao: #353738;
   --cor-botao-texto: #ffffff;
   --cor-divisoria: #d0d2d6;
+  --cor-pilula-fundo: #e2e3e6;
+  --cor-pilula-texto: #353738;
+  --tam-pilula: 14px;
 
   /* Títulos */
   --tam-titulo-principal: 88px;
@@ -220,6 +223,26 @@ a:focus-visible {
 .card:hover h2 span,
 .card:focus-visible h2 span {
   background-size: 100% 2px;
+}
+
+/* ---------- PÍLULAS: tags pequenas embaixo do nome do case ---------- */
+.pilulas {
+  display: flex;
+  flex-wrap: wrap;          /* quebram de linha no celular se faltar espaço */
+  gap: 8px;
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.pilulas li {
+  padding: 6px 14px;
+  background: var(--cor-pilula-fundo);
+  color: var(--cor-pilula-texto);
+  border-radius: 999px;
+  font-size: var(--tam-pilula);
+  font-weight: 500;
+  line-height: 1.2;
 }
 
 /* ---------- RODAPÉ ---------- */
