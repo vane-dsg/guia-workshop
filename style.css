@@ -729,6 +729,10 @@ aside.cases .card h2 {
   font-size: var(--tam-nome-card-outros);
 }
 
+aside.cases .pilulas {
+  margin-top: 12px;
+}
+
 /* ---------- CASE no celular ---------- */
 @media (max-width: 720px) {
   :root {
