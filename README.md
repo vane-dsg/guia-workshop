@@ -10,14 +10,14 @@ trocar um valor ou um texto e salvar.
 
 ## Sumário
 
-0. [Checklist: deixe com a sua cara](#7-checklist-deixe-com-a-sua-cara)
-1. [Antes de tudo: os arquivos e como editar no GitHub](#0-antes-de-tudo)
-2. [Mudar os estilos: cores, fontes, botões e cards](#1-mudar-os-estilos)
-3. [Trocar as imagens](#2-trocar-as-imagens)
-4. [Mudar os textos e os links](#3-mudar-os-textos-e-os-links)
-5. [Adicionar um case](#4-adicionar-um-case)
-6. [Adicionar experiência, formação e habilidades](#5-adicionar-experiência-formação-e-habilidades)
-7. [Outros ajustes úteis](#6-outros-ajustes-úteis)
+0. [Checklist: deixe com a sua cara](#0-checklist-deixe-com-a-sua-cara)
+1. [Antes de tudo: os arquivos e como editar no GitHub](#1-antes-de-tudo)
+2. [Mudar os estilos: cores, fontes, botões e cards](#2-mudar-os-estilos)
+3. [Trocar as imagens](#3-trocar-as-imagens)
+4. [Mudar os textos e os links](#4-mudar-os-textos-e-os-links)
+5. [Adicionar um case](#5-adicionar-um-case)
+6. [Adicionar experiência, formação e habilidades](#6-adicionar-experiência-formação-e-habilidades)
+7. [Outros ajustes úteis](#7-outros-ajustes-úteis)
 8. [Se algo der errado](#8-se-algo-der-errado)
 
 ---
