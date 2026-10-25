@@ -20,7 +20,6 @@
   --cor-divisoria: #d0d2d6;
   --cor-pilula-fundo: #e2e3e6;
   --cor-pilula-texto: #353738;
-  --tam-pilula: 14px;
 
   /* Títulos */
   --tam-titulo-principal: 88px;
@@ -37,6 +36,7 @@
   --peso-descricao: 300;
   --tam-menu: 18px;
   --peso-menu: 400;
+  --tam-pilula: 16px;
 
   /* Espaçamentos */
   --largura-max: 1028px;
@@ -236,7 +236,7 @@ a:focus-visible {
 }
 
 .pilulas li {
-  padding: 6px 14px;
+  padding: 8px 16px;
   background: var(--cor-pilula-fundo);
   color: var(--cor-pilula-texto);
   border-radius: 999px;
